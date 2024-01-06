@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char showWinner(char player, char computer, int comp_tally, int player_tally);
+char showWinner(char player, char computer);
 char getUserChoice();
 char getComputerChoice();
 void showChoice(char choice);
@@ -29,7 +29,7 @@ int main() {
     cout << "Computer choice: ";
     showChoice(computer);
 
-    result = showWinner(player, computer, comp_tally, player_tally);
+    result = showWinner(player, computer);
     
     if (result == 'p') {
         player_tally += 1;
@@ -110,7 +110,9 @@ void showChoice(char choice) {
     }
 }
 
-char showWinner(char player, char computer, int comp_tally, int player_tally) {
+char showWinner(char player, char computer) {
+    int player_tally = 0;
+    int comp_tally = 0;
 
     if (player == 'r' && computer == 's') {
         cout << "Rock crushes scissors! Player wins!" << endl;
